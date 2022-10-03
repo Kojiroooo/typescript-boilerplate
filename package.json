@@ -9,6 +9,8 @@
     "migration:create": "yarn prisma migrate dev --create-only --preview-feature",
     "migration:up": "yarn prisma migrate dev --preview-feature",
     "schema:generate": "yarn prisma generate",
+    "migration:status": "yarn prisma migrate status",
+    "migration:down:1": "yarn prisma migrate down --experimental",
     "tsc": "tsc",
     "ts-node": "ts-node -r tsconfig-paths/register",
     "dotenv": "dotenv"

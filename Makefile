@@ -12,6 +12,9 @@ db_init:
 yarn_install:
 	$(COMPOSE) run $(MAIN_CONTAINER) yarn install
 
+migration_status:
+	$(COMPOSE) run $(MAIN_CONTAINER) yarn migration:status
+
 migration_create:
 	$(COMPOSE) run $(MAIN_CONTAINER) yarn migration:create
 
@@ -54,3 +57,9 @@ sh:
 
 clean:
 	$(COMPOSE) down -v --rmi all
+
+schema_generate:
+	$(COMPOSE) run $(MAIN_CONTAINER) yarn schema:generate
+
+exec_db_sh:
+	$(COMPOSE) exec db bash
